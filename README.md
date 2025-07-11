@@ -1,37 +1,40 @@
-## Creating a project
+# Creating a Project
 
-Create a folder name that folder, open the folder in vscode and run the command in terminal to create virtual environment,you can use your own name for virtual environment 'python -m venv environment_name'
-```
-python -m venv env
-```
+1. Create a folder, name it appropriately, open the folder in VS Code, and run the following command in the terminal to create a virtual environment (you can choose your own name for the environment):
+    ```
+    python -m venv env
+    ```
 
-Run the commant to activate the environment '.\user_environment_name\Scripts\activate'
-```
-.\env\Scripts\activate
-```
+2. Activate the virtual environment by running the command (replace env with your environment name if different):
+    ```
+    .\env\Scripts\activate
+    ```
 
-Run the command to install the requirements in the 'requirements.txt'
-```
-pip install -r requirements.txt
-```
+3. Install the required packages from requirements.txt:
+    ```
+    pip install -r requirements.txt
+    ```
 
-To create the main app, run the command 
-```
-django-admin startproject school_managment . 
-```
+4. Create the main Django project by running: 
+    ```
+    django-admin startproject school_managment . 
+    ```
 
-For create other sub app
-```
-python manage.py startapp school
-```
+5. Create a sub-app (for example, school) using the command:
+    ```
+    python manage.py startapp school
+    ```
 
-Look for 'settings.py' in main app and add 'school.apps.SchoolConfig' to the " INSTALLED_APPS " list
+6. Register the sub-app:
+    Open settings.py in the main project folder and add 'school.apps.SchoolConfig' to the INSTALLED_APPS list.
 
-Look for 'models.py' in sub app and create the tables needed, run the command to create the models
-```
-cd school_managment
+7. Define your models:
+    Open models.py inside the school app and define the database tables you need.
 
-python manage.py makemigrations 
+8. Apply the migrations:
+    Run the following commands to create and apply the database migrations:
+    ```
+    python manage.py makemigrations 
 
-python manage.py migrate
-```
+    python manage.py migrate
+    ```
